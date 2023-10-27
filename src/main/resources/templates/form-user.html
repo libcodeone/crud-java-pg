@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Usuarios</title>
+    <link th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" >
+    <h1>Formulario de Usuarios</h1>
+    
+
+    <div class="card">
+        <div class="card-header">
+          Agregar
+        </div>
+        <div class="card-body">
+            <form method="post" th:object="${usuario}" th:action="@{/nuevo}">
+                <input type="hidden" th:field="*{id}">
+                <div class="mb-3">
+                <label class="form-label" for="nombre">Nombre:</label>
+                <input class="form-control " type="text" id="name" th:field="*{name}">
+                </div>
+                
+                <button class="btn btn-primary " type="submit">Guardar</button>
+                <a class="btn btn-light" href="/users">Volver a la lista</a>
+            </form>
+           
+        
+        </div>
+      </div>
+
+</div>
+</body>
+</html>
